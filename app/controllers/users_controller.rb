@@ -22,9 +22,7 @@ class UsersController < ApplicationController
       end
     end
     @dates = @user.attendances.where('worked_on >= ? and worked_on <= ?', @first_day, @last_day).order('worked_on')
-    # @worked_sum = @dates.where.not(started_at: nil).count
-    works = @dates.where.not(started_at: nil)
-    @worked_sum = works.count
+    @worked_sum = @dates.where.not(started_at: nil).count
   end
   
   def new
