@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   patch 'update-basic-info',  to: 'users#update_basic_info'
   resources :users do
     resources :attendances, only: :create
+    resource :attendances, only: [:edit, :update]
   end
 end
